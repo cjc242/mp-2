@@ -33,7 +33,7 @@ export default function Cocktails(props : { data:Drink[] } ){
             {
                 props.data.map((drink: Drink) =>
                     <SingleCharDiv key={drink.idDrink} alcoholic={drink.strAlcoholic}>
-                        <Title>{drink.strDrink}</Title>
+                        <Title alcoholic={drink.strAlcoholic}>{drink.strDrink}</Title>
                         <p>{drink.strCategory}</p>
                         <p>{drink.strAlcoholic}</p>
                         <img src={drink.strDrinkThumb} alt={`image of ${drink.strDrink}`} />
