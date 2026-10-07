@@ -3,9 +3,9 @@ import type {Drink} from "../interfaces/Drinks.ts";
 
 const AllDrinksDiv=styled.div`
     display: flex;
-    flex-flow: row wrap;    
+    flex-flow: row wrap;
     justify-content: space-evenly;
-    background-color: bisque;
+    background-color: #5746fd;
 `;
 
 const SingleDrinkDiv=styled.div<{alcoholic: string}>`

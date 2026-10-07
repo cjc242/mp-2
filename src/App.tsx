@@ -21,7 +21,7 @@ export default function App(){
     }
     fetchData()
         .then(() => console.log("Data fetched successfully"))
-        .catch((e: Error) => console.log("There was the error: " + e));
+        .catch((e: Error) => console.log("There was an error: " + e));
   }, []);
 
   return(
