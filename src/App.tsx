@@ -4,9 +4,9 @@ import {useEffect, useState} from "react";
 import type {Drink} from "./interfaces/Drinks.ts";
 
 const ParentDiv=styled.div`
-    width: 80vw;
-    margin: auto;
-    border: 5px darkgoldenrod solid;
+  width: 80vw;
+  margin: auto;
+  border: 5px #0dd6b8 solid;
 `;
 
 export default function App(){
