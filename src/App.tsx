@@ -11,13 +11,13 @@ const ParentDiv=styled.div`
 
 export default function App(){
 
-  const [data, setData] = useState<Drink[]>([]);
+  const [drinks, setDrinks] = useState<Drink[]>([]);
 
   useEffect(() => {
     async function fetchData(): Promise<void> {
       const rawData = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a");
-      const {drinks} : {drinks: Drink[]} = await rawData.json();
-      setData(drinks);
+      const {drinks: fetchedDrinks} : {drinks: Drink[]} = await rawData.json();
+      setDrinks(fetchedDrinks);
     }
     fetchData()
         .then(() => console.log("Data fetched successfully"))
@@ -26,7 +26,7 @@ export default function App(){
 
   return(
       <ParentDiv>
-        <Cocktails data={data}/>
+        <Cocktails data={drinks}/>
       </ParentDiv>
   )
 }
