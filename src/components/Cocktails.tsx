@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import type {Drink} from "../interfaces/Drinks.ts";
 
-const AllCharsDiv=styled.div`
+const AllDrinksDiv=styled.div`
     display: flex;
     flex-flow: row wrap;    
     justify-content: space-evenly;
     background-color: bisque;
 `;
 
-const SingleCharDiv=styled.div<{alcoholic: string}>`
+const SingleDrinkDiv=styled.div<{alcoholic: string}>`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@ const SingleCharDiv=styled.div<{alcoholic: string}>`
     margin: 1%;
     background-color: ${(props) => (props.alcoholic === "Alcoholic" ? 'black' : 'red')};
     color: ${(props) => (props.alcoholic !== "Alcoholic" ? 'black' : 'white')};
-    border: 3px #5a0101 solid;
+    border: 5px #5a0101 solid;
     font: italic small-caps bold calc(2px + 1vw) Papyrus, fantasy;
     text-align: center;
 `;
@@ -29,17 +29,17 @@ const Title = styled.h1<{ alcoholic: string }>`
 
 export default function Cocktails(props : { data:Drink[] } ){
     return (
-        <AllCharsDiv >
+        <AllDrinksDiv >
             {
                 props.data.map((drink: Drink) =>
-                    <SingleCharDiv key={drink.idDrink} alcoholic={drink.strAlcoholic}>
+                    <SingleDrinkDiv key={drink.idDrink} alcoholic={drink.strAlcoholic}>
                         <Title alcoholic={drink.strAlcoholic}>{drink.strDrink}</Title>
                         <p>{drink.strCategory}</p>
                         <p>{drink.strAlcoholic}</p>
                         <img src={drink.strDrinkThumb} alt={`image of ${drink.strDrink}`} />
-                    </SingleCharDiv>
+                    </SingleDrinkDiv>
                 )
             }
-        </AllCharsDiv>
+        </AllDrinksDiv>
     );
 }
